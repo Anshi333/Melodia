@@ -15,6 +15,18 @@ $(document).keypress(function() {
   }
 });
 
+$(document).ready(function() {
+  if ($(window).width() <= 768) {
+      $("#start").on("click", function() {
+          if (!started) {
+              $("#start").text("Level " + level);
+              nextSequence();
+              started = true;
+          }
+      });
+  }
+});
+
 $(".btn").click(function() {
 
   var userChosenColour = $(this).attr("id");
